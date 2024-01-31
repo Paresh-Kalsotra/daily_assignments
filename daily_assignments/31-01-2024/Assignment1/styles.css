@@ -1,0 +1,27 @@
+#title{
+    font-family:Times ;
+    text-align: center;
+}
+
+#heading1{
+    color: red;
+    font-style: italic;
+    font-family: sans-serif;
+    text-align: center;
+    }
+ #heading2{
+     color: rgb(149, 0, 255);
+     font-family:Arial;
+     text-align: center;
+     }
+.para{
+    color: black;
+    font-style:normal;
+    font-family:ariel;
+}
+div{
+      border: 2px solid black;
+      margin:20px;
+      padding-left: 30px;
+      background: rgb(244, 212, 215);
+}

@@ -1,0 +1,28 @@
+#head{
+    color: red; 
+    font-size: 24px; 
+    background: red;
+}
+#para1{
+    background-color: yellow;
+     padding: 10px;
+}
+#para2{
+    text-align: center;
+}
+.section{
+    color: blue;
+}
+.item1{
+    font-weight: bold;
+}
+.item2{
+    font-weight: italic;
+}
+div{
+    border: 1px solid black;
+   
+}
+#div2{
+    background: red;
+}
