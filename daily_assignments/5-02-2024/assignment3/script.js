@@ -27,7 +27,7 @@ if (system == "length") {
   }
   alert("Converted value is: " + value + " " + new_unit);
 } else if (system == "weight") {
-  org_unit = prompt("Enter the unit you are converting from:kgm, gram");
+  org_unit = prompt("Enter the unit you are converting from:kg, gram");
   new_unit = prompt("Enter the unit you want to convert into: kg, gram");
   if (org_unit == "kg" && new_unit == "gram") {
     value = value * 1000;
