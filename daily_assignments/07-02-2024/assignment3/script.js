@@ -6,8 +6,7 @@ round_score = [];
 
 function playRound(r_num) {
   let tries = 0;
-  rand_num = 50;
-  //   rand_num = parseInt(Math.random() * 100);
+  rand_num = parseInt(Math.random() * 100);
   alert("Round " + r_num + " begins");
   guess_num = prompt("Enter your guess between 1 and 100");
 
