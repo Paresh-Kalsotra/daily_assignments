@@ -79,9 +79,8 @@ function managementSystem() {
       break;
     case 2:
       input_id = parseInt(
-        prompt("Enter Book Id form the available list" + listAvailableBooks())
+        prompt("Enter Book Id form the available list-" + listAvailableBooks())
       );
-      alert(input_id);
       borrowBook(input_id);
       break;
     case 3:
