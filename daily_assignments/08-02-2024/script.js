@@ -20,7 +20,7 @@ function borrowBook(id) {
   let flag = 0;
   for (let bookdetails of libraryArray) {
     if (bookdetails.id == id && bookdetails.isBorrowed == false) {
-      alert("Book Available for borrowing");
+      alert("Book borrowed");
       bookdetails.isBorrowed = true;
       flag++;
       break;
@@ -57,7 +57,7 @@ function searchBook(title) {
   let book = null;
   for (let bookdetails of libraryArray) {
     if (bookdetails.title == title) {
-      book = `Details: ID= ${bookdetails.id}, ${bookdetails.title} by ${bookdetails.author}`;
+      book = `Details: ID= ${bookdetails.id}, ${bookdetails.title} by ${bookdetails.author}, borrowed status ${bookdetailes.isBorrowed}`;
     }
   }
   return book;
@@ -106,9 +106,9 @@ function managementSystem() {
 }
 //----------------------------------------------
 
-addBook("Burning Days", " John", true);
-addBook("White mountain", " Amit", true);
-addBook("Hardwork beats Talent", "Will", false);
+addBook("Burning Days", " John");
+addBook("White mountain", " Amit");
+addBook("Hardwork beats Talent", "Will");
 addBook("Into the mist", " Emily ");
 
 alert("Welcome to library management system");
