@@ -1,16 +1,18 @@
 let purpose,
   active_status = "yes";
+id = 1;
 libraryArray = [];
 
-function Book(id, title, author, isBorrowed = false) {
+function Book(title, author, isBorrowed = false) {
   this.id = id;
   this.title = title;
   this.author = author;
   this.isBorrowed = isBorrowed;
 }
 
-function addBook(id, title, author) {
-  libraryArray.push(new Book(id, title, author, false));
+function addBook(title, author, isBorrowed = false) {
+  libraryArray.push(new Book(title, author, isBorrowed));
+  id++;
   return "Book Added";
 }
 
@@ -71,10 +73,9 @@ function managementSystem() {
 
   switch (purpose) {
     case 1:
-      input_id = parseInt(prompt("Enter Book Id"));
       input_title = prompt("Enter Book Title");
       input_author = prompt("Enter Author name");
-      alert(addBook(input_id, input_id, input_author));
+      alert(addBook(input_title, input_author));
       break;
     case 2:
       input_id = parseInt(
@@ -106,10 +107,10 @@ function managementSystem() {
 }
 //----------------------------------------------
 
-libraryArray.push(new Book(123, "Burning Days", " John", true));
-libraryArray.push(new Book(234, "White mountain", " Amit"));
-libraryArray.push(new Book(345, "Hardwork beats Talent", "Will", false));
-libraryArray.push(new Book(456, "Into the mist", " Emily "));
+addBook("Burning Days", " John", true);
+addBook("White mountain", " Amit", true);
+addBook("Hardwork beats Talent", "Will", false);
+addBook("Into the mist", " Emily ");
 
 alert("Welcome to library management system");
 managementSystem();
