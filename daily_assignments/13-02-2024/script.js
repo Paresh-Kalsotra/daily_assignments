@@ -8,7 +8,7 @@ const student = {
 };
 
 //-----------------------------
-//func to display information
+//func def to display information
 function displayInfo(message) {
   console.log(message + this.Name);
   console.log(this.Name);
@@ -33,9 +33,7 @@ function processSubjects(arr, func) {
   let newarray = arr.concat(func(subArray));
   console.log(newarray);
 }
-const ret = (Array) => {
-  return Array;
-};
+const ret = (Array) => Array;
 
 processSubjects(student.subjects, ret);
 
@@ -48,8 +46,8 @@ function doubleGrade(array) {
 
 function passingSubject(arr) {
   let passSub = [];
-  arr.filter((num, key) => {
-    if (num >= 70) {
+  arr.filter((marks, key) => {
+    if (marks >= 70) {
       passSub.push(student.subjects[key]);
     }
   });
