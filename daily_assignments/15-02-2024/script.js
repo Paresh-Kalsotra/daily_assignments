@@ -2,11 +2,13 @@ const url1 = "https://jsonplaceholder.typicode.com/users";
 const url2 = "https://jsonplaceholder.typicode.com/albums";
 const url3 = "https://jsonplaceholder.typicode.com/todos";
 
+// async function to fetch data
 async function getData(url) {
   const fet = await fetch(url);
   const data = await fet.json();
   return data;
 }
+//destructuring nested object in string
 function destructure(value) {
   if (typeof value == "object") {
     let destValue = "";
@@ -22,6 +24,7 @@ function destructure(value) {
   return value;
 }
 
+//function to display data to ui
 async function disp(data, table_id) {
   const table = document.getElementById(table_id);
   //table heading row
