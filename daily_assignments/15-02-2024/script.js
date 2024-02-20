@@ -8,7 +8,7 @@ async function getData(url) {
   const data = await fet.json();
   return data;
 }
-//destructuring nested object in string
+//destructuring nested object to a string using recurrsion
 function destructure(value) {
   if (typeof value == "object") {
     let destValue = "";
@@ -46,11 +46,8 @@ async function disp(data, table_id) {
 }
 
 let user_pr = getData(url1);
-console.log(user_pr);
 let album_pr = getData(url2);
-console.log(album_pr);
 let todos_pr = getData(url3);
-console.log(todos_pr);
 
 user_pr.then((resolve) => disp(resolve, "userTable"));
 album_pr.then((resolve) => disp(resolve, "albumTable"));
