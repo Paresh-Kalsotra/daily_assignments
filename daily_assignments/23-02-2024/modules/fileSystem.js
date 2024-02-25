@@ -17,7 +17,6 @@ export function logFile(text) {
 export function readFromFile() {
   try {
     const data = fs.readFileSync(dataFilePath, "utf8");
-    logFile("Data read successfully");
     return JSON.parse(data);
   } catch (err) {
     logFile("Error reading file:", err.message);
