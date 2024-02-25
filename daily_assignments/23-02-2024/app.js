@@ -1,16 +1,19 @@
-const express = require("express");
-const fs = require("fs");
+import express from "express";
+import router from "./modules/router.js";
+import { logFile } from "./modules/fileSystem.js";
 
-const app = express();
-const port = 8000;
+const server = express();
+server.use(express.json()); //middleware to parse requests
 
-app.use(express.json()); //middleware to parse requests
+server.use(router);
+
+const port = 8080;
 
 //running server
-app.listen(port, (error) => {
+server.listen(port, (error) => {
   if (!error) {
-    console.log(`Server listening at port: ${port}`); //log this
+    logFile(`Server listening at port: ${port}`); //log to txt file and to console
   } else {
-    console.log(`Server can't start: ${error}`); //log this
+    logFile(`Server can't start: ${error}`);
   }
 });
