@@ -4,7 +4,7 @@ import express from "express";
 const router = express.Router();
 
 //get request
-router.get("/users", (req, res) => {
+router.get("", (req, res) => {
   const data = readFromFile();
   if (!data) {
     res.status(500); //server error
@@ -16,7 +16,7 @@ router.get("/users", (req, res) => {
 });
 
 // get request - id
-router.get("/users/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const data = readFromFile(); //reading user data
   const user_data = data.filter((item) => item.id === id); //filtering user record using id
@@ -31,7 +31,7 @@ router.get("/users/:id", (req, res) => {
 });
 
 //post request
-router.post("/users", (req, res) => {
+router.post("/", (req, res) => {
   if ("id" in req.body) {
     const data = readFromFile(); //reading file
     data.push(req.body); //pushing new data
@@ -49,7 +49,7 @@ router.post("/users", (req, res) => {
 });
 
 //put request
-router.put("/users/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   if ("id" in req.body) {
     const data = readFromFile(); //reading file
@@ -75,7 +75,7 @@ router.put("/users/:id", (req, res) => {
 });
 
 //delete request
-router.delete("/users/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const data = readFromFile(); //reading file
   const updated_data = data.filter((item) => item.id !== id); //filtering user data using id

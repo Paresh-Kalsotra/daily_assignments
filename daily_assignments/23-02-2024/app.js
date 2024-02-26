@@ -10,7 +10,7 @@ import { logFile } from "./modules/fileSystem.js";
 const server = express();
 server.use(express.json()); //middleware to parse requests
 
-server.use(router);
+server.use("/users", router);
 
 // server.get("/", function (req, res) {
 //   res.sendFile(path.join(__dirname, "/index.html"));
