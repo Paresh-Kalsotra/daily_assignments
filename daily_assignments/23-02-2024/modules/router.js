@@ -4,7 +4,7 @@ import express from "express";
 const router = express.Router();
 
 //get request
-router.get("", (req, res) => {
+router.get("/", (req, res) => {
   const data = readFromFile();
   if (!data) {
     res.status(500); //server error

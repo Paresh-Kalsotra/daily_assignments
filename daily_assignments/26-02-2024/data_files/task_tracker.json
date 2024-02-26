@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "morning run",
+    "description": "run for 10 km at 6 am",
+    "complete": true
+  },
+  {
+    "id": 2,
+    "title": "breakfast",
+    "description": "eat protein rich meal",
+    "complete": true
+  },
+  {
+    "id": 3,
+    "title": "study",
+    "description": "revise what learned yesterday",
+    "complete": true
+  },
+  {
+    "id": 4,
+    "title": "playing",
+    "description": "play outdoor sport",
+    "complete": false
+  }
+]
