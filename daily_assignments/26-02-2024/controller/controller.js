@@ -134,11 +134,18 @@ function patchUpdate(req, res) {
 function deleteTask(req, res) {
   const id = parseInt(req.params.id);
   const tasks = read();
-  const new_list = tasks.filter((item) => item.id !== id); // removing fav_task obj
-  if (write(new_list)) {
-    return res.status(201).send(`task deleted successfully`);
+
+  const del_task = tasks.filter((item) => item.id === id);
+
+  //filtering tasks for deletion and checking if empty
+  if (del_task.length !== 0) {
+    const new_list = tasks.filter((item) => item.id !== id); // removing fav_task obj
+    if (write(new_list)) {
+      return res.status(201).send(`task deleted successfully`);
+    }
+    return res.status(500).send("Failed to delete task");
   }
-  return res.status(500).send("Failed to delete task");
+  return res.status(404).send("Task not found");
 }
 
 module.exports = {
