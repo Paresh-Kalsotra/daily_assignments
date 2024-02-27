@@ -22,7 +22,7 @@ function write(data) {
     return false;
   }
 }
-//-------------
+
 // controller actions
 
 function getAll(req, res) {
@@ -37,6 +37,7 @@ function getById(req, res) {
   const id = parseInt(req.params.id);
   const tasks = read();
   const specific_task = tasks.filter((item) => item.id === id); // finding specific task
+
   if (specific_task.length === 0) {
     return res.status(404).send("task not found");
   }
@@ -47,16 +48,23 @@ function postTask(req, res) {
   if ("title" in req.body && "description" in req.body) {
     const tasks = read();
     let id = 0;
-    for (item of tasks) {
-      //finding max id
-      if (item.id >= id) {
-        id = item.id;
+
+    //taking id from req.body if present else assigning new id
+    if ("id" in req.body) {
+      id = req.body.id;
+    } else {
+      for (item of tasks) {
+        //finding max id
+        if (item.id >= id) {
+          id = item.id;
+        }
       }
+      id = id + 1;
     }
 
     tasks.push({
       ...req.body,
-      id: id + 1,
+      id: id,
       complete: req.body.complete || false,
     });
 
@@ -78,7 +86,9 @@ function putUpdate(req, res) {
     const tasks = read();
     const fav_task = tasks.filter((item) => item.id === id); // finding favourable
     const new_list = tasks.filter((item) => item.id !== id); // removing fav_task obj
+
     if (fav_task.length !== 0) {
+      //adding updated obj
       new_list.push({
         id: id,
         title: req.body.title,
@@ -100,18 +110,17 @@ function patchUpdate(req, res) {
   if ("complete" in req.body) {
     const tasks = read();
     const fav_task = tasks.filter((item) => item.id === id); // finding favourable
-
     const updated_list = tasks.filter((item) => item.id !== id); // removing fav_task obj
+
     if (fav_task.length !== 0) {
+      //appending updated obj
       updated_list.push({
         id: fav_task[0].id,
         title: fav_task[0].title,
         description: fav_task[0].description,
         complete: req.body.complete,
       });
-      console.log(fav_task);
-      console.log(fav_task[0].description);
-      console.log(updated_list);
+
       if (write(updated_list)) {
         return res.status(201).send(`task updated successfully`);
       }
