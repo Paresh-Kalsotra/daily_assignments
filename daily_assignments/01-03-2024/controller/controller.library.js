@@ -78,6 +78,7 @@ async function deleteBook(req, res) {
     if (!deletedBook) {
       return res.status(404).json("Book not found");
     }
+
     res.status(200).json("Book Removed ");
   } catch (err) {
     console.log(err);

@@ -8,7 +8,7 @@ const port = 8000;
 
 server.use(express.json()); //middlewares
 server.use(express.static(path.join(__dirname, "library_page")));
-// server.use(express.static(path.join(__dirname, "login_page")));
+server.use(express.static(path.join(__dirname, "login_page")));
 
 //routers
 server.use("/library", libraryRouter);
