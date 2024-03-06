@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login in</title>
+    <title>login</title>
   </head>
-  <body></body>
+  <body>
+    <div class="box">
+      <h1>Login to your account</h1>
+
+      <form>
+        <div id="login">
+          <span>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" />
+          </span>
+          <span>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" />
+          </span>
+          <button type="submit" id="add-button">Login</button>
+        </div>
+      </form>
+      <div id="addResponse"></div>
+    </div>
+  </body>
 </html>

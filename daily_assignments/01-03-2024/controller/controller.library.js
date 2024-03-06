@@ -2,9 +2,6 @@ const path = require("path");
 const bookModel = require("../models/bookModel.js");
 const mongoose = require("mongoose");
 
-const uri =
-  "mongodb+srv://pareshkalsotra:pareshkanu@cluster0.oepwuys.mongodb.net/library";
-
 //returning html page in response
 async function lmsLoad(req, res) {
   res.status(200).sendFile(path.join(__dirname, "../library_page/index.html"));
@@ -14,8 +11,6 @@ async function lmsLoad(req, res) {
 async function getBook(req, res) {
   try {
     const title = req.params.title;
-
-    await mongoose.connect(uri); // connecting to mongodb
 
     const book = await bookModel.findOne({ title: title });
     res.status(200).json(book);
@@ -28,8 +23,6 @@ async function getBook(req, res) {
 //add book to library
 async function addBook(req, res) {
   try {
-    await mongoose.connect(uri); // connecting to mongodb
-
     // book document creation
 
     const bookData = req.body;
@@ -45,7 +38,6 @@ async function addBook(req, res) {
 //func to get booklist
 async function getAllBook(req, res) {
   try {
-    await mongoose.connect(uri); // connecting to mongodb
     const booklist = await bookModel.find(); //.find returns a query so we have to await it
     res.status(200).json(booklist);
   } catch (err) {
@@ -60,7 +52,6 @@ async function updateBook(req, res) {
     const id = new mongoose.Types.ObjectId(req.body.id);
     const newStatus = !req.body.status;
 
-    await mongoose.connect(uri); // connecting to mongodb
     await bookModel.findOneAndUpdate({ _id: id }, { isBorrowed: newStatus });
 
     res.status(201).json(` Book Status updated, ID: ${id}`);
@@ -73,7 +64,6 @@ async function updateBook(req, res) {
 async function deleteBook(req, res) {
   try {
     const title = req.params.title;
-    await mongoose.connect(uri); // connecting to mongodb
     const deletedBook = await bookModel.findOneAndDelete({ title: title });
     if (!deletedBook) {
       return res.status(404).json("Book not found");
