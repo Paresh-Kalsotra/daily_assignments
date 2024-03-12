@@ -4,9 +4,10 @@ import React from "react";
 const Header = () => {
   return (
     <header>
-      <h1>Cars Shopee</h1>
-      <img id="logo" src="./assets/logo.jpg" />
-
+      <h1>
+        <img id="logo" src="./assets/logo.jpg" />
+        Cars Shopee
+      </h1>
       <nav class="navbar">
         <ul>
           <li>
