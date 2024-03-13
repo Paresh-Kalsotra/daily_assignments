@@ -29,7 +29,7 @@ const Card = (props) => {
       <p>
         <strong>Production:</strong> {car.start_production}
       </p>
-      <button>Add to Cart</button>
+      <button>Book Now</button>
     </div>
   );
 };
