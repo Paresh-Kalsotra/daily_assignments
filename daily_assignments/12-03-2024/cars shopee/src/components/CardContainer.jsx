@@ -121,12 +121,14 @@ const cars = [
 
 const CardContainer = () => {
   return (
-    <div>
-      <h2 style={{ margin: "20px" }}>Our Recommendations</h2>
+    <div style={{ margin: "4%" }}>
+      <h2>Our Recommendations</h2>
       <div
         style={{
           display: "flex",
-          flexWrap: "wrap",
+          gap: "1.5%",
+          overflowX: "auto",
+          padding: "2% 0 2% 0",
         }}
       >
         {cars.map((car) => (
