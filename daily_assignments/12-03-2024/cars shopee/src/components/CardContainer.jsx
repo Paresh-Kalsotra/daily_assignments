@@ -1,123 +1,61 @@
 import React from "react";
 import Card from "./Card";
 
-const cars = [
+const carslist = [
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg/400px-2015_Mazda_MX-5_ND_2.0_SKYACTIV-G_160_i-ELOOP_Rubinrot-Metallic_Vorderansicht.jpg",
-    title: "Mazda MX-5",
-    start_production: 1989,
-    class: "Sports car Roadster",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mercedes_R_350_CDI_4MATIC_Lang_%28V251%29_Facelift_front_20101017.jpg/400px-Mercedes_R_350_CDI_4MATIC_Lang_%28V251%29_Facelift_front_20101017.jpg",
+    title: "Mercedes-Benz R-Class",
+    class: "Full-size CUV / Large MPV",
   },
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/PontiacSolstice.jpg/400px-PontiacSolstice.jpg",
-    title: "Pontiac Solstice",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Mercedes_300SL_Coupe_vr_silver_EMS.jpg/400px-Mercedes_300SL_Coupe_vr_silver_EMS.jpg",
+    title: "Mercedes-Benz 300 SL",
+    start_production: 1952,
+    class: "Sports car, GT",
+  },
+  {
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Mercedes-Benz_230_SL%2C_Bj._1964_%282009-05-01%29.jpg/400px-Mercedes-Benz_230_SL%2C_Bj._1964_%282009-05-01%29.jpg",
+    title: "Mercedes-Benz W113",
+    start_production: 1963,
+    class: "Sports car, GT",
+  },
+  {
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Mercedes-Benz_S_320_CDI_4MATIC_L_%28V_221%29_%E2%80%93_Frontansicht_%281%29%2C_30._August_2011%2C_D%C3%BCsseldorf.jpg/400px-Mercedes-Benz_S_320_CDI_4MATIC_L_%28V_221%29_%E2%80%93_Frontansicht_%281%29%2C_30._August_2011%2C_D%C3%BCsseldorf.jpg",
+    title: "Mercedes-Benz S-Class (W221)",
     start_production: 2005,
-    class: "Roadster, coupe",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/1971_AMC_Javelin_SST_red_Kenosha_street.JPG/400px-1971_AMC_Javelin_SST_red_Kenosha_street.JPG",
-    title: "AMC Javelin",
-    start_production: 1967,
-    class: "Unbulleted list,Pony car, Muscle car,",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/2003-2005_Pontiac_Sunfire.jpg/400px-2003-2005_Pontiac_Sunfire.jpg",
-    title: "Pontiac Sunfire",
-    start_production: 1994,
-    class: "Compact",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Jaguar_X-Type_Estate_front_20080731.jpg/400px-Jaguar_X-Type_Estate_front_20080731.jpg",
-    title: "Jaguar X-Type",
-    start_production: 2001,
-    class: "Compact executive car",
-  },
-
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Dynamixion_car_by_Buckminster_Fuller_1933_%28side_views%29.jpg/400px-Dynamixion_car_by_Buckminster_Fuller_1933_%28side_views%29.jpg",
-    title: "Dymaxion car",
-    start_production: 1933,
-    class: "Concept car",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ford_Crown_Victoria_LX.jpg/400px-Ford_Crown_Victoria_LX.jpg",
-    title: "Ford Crown Victoria",
-    start_production: 1955,
-    class: "Full-size Ford",
-  },
-
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/2nd-Saab-9000-hatch.jpg/400px-2nd-Saab-9000-hatch.jpg",
-    title: "Saab 9000",
-    start_production: 1984,
-    class: "Executive car",
-  },
-
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/VW_Phaton_%282._Facelift%29_%E2%80%93_Frontansicht%2C_7._Mai_2011%2C_D%C3%BCsseldorf.jpg/400px-VW_Phaton_%282._Facelift%29_%E2%80%93_Frontansicht%2C_7._Mai_2011%2C_D%C3%BCsseldorf.jpg",
-    title: "Volkswagen Phaeton",
-    start_production: 2002,
     class: "Full-size luxury car",
   },
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Pontiac_G6.jpg/400px-Pontiac_G6.jpg",
-    title: "Pontiac G6",
-    start_production: 2004,
-    class: "Midsize",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/MB_190_SL_am_2006-07-16_%28ret_kl%29.JPG/400px-MB_190_SL_am_2006-07-16_%28ret_kl%29.JPG",
+    title: "Mercedes-Benz 190 SL",
+    start_production: 1955,
+    class: "Grand tourer",
   },
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Ford500a.JPG/400px-Ford500a.JPG",
-    title: "Ford Five Hundred",
-    start_production: 2004,
-    class: "Full-size",
-  },
-
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Fiat_tipo_f.jpg/400px-Fiat_tipo_f.jpg",
-    title: "Fiat Tipo",
-    start_production: 1988,
-    class: "Small family car",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/2013_Mercedes-Benz_SL_550_vf.jpg/400px-2013_Mercedes-Benz_SL_550_vf.jpg",
+    title: "Mercedes-Benz SL-Class (R231)",
+    start_production: 2012,
+    class: "Sports car, Roadster",
   },
   {
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/1985-89_Plymouth_Reliant_K_LE.png/400px-1985-89_Plymouth_Reliant_K_LE.png",
-    title: "Plymouth Reliant",
-    start_production: 1981,
-    class: "Mid-size",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/1978_chevette.JPG/400px-1978_chevette.JPG",
-    title: "Chevrolet Chevette",
-    start_production: 1975,
-    class: "Subcompact",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Seat_Leon_1.4_TSI_Start%26Stop_Style_%28III%29_%E2%80%93_Frontansicht%2C_10._August_2013%2C_Ratingen.jpg/400px-Seat_Leon_1.4_TSI_Start%26Stop_Style_%28III%29_%E2%80%93_Frontansicht%2C_10._August_2013%2C_Ratingen.jpg",
-    title: "SEAT León",
-    class: "Small family car",
-  },
-  {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Chevrolet_Corsica_1994.jpg/400px-Chevrolet_Corsica_1994.jpg",
-    title: "Chevrolet Corsica",
-    start_production: 1987,
-    class: "Compact car",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Mercedes-Benz_370S_1931.jpg/400px-Mercedes-Benz_370S_1931.jpg",
+    title: "Mercedes-Benz W10",
+    start_production: 1929,
+    class: "Compact executive car",
   },
 ];
+
+//later to use usestate for searching
+const cars = carslist.filter((item) =>
+  item.title.toLowerCase().includes("mercedes")
+);
 
 const CardContainer = () => {
   return (
