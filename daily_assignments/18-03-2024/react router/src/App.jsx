@@ -1,55 +1,18 @@
 import React from "react";
-import {
-  NavLink,
-  Outlet,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/HomePage";
 import Users from "./pages/UsersPage";
 import Posts from "./pages/PostsPage";
 import Todos from "./pages/TodosPage";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const route = [
   {
     path: "/",
     element: (
       <div>
-        <nav>
-          <NavLink
-            to="/"
-            style={({ isActive }) => {
-              return isActive ? { color: "cyan" } : {};
-            }}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/users"
-            style={({ isActive }) => {
-              return isActive ? { color: "plum" } : {};
-            }}
-          >
-            Users
-          </NavLink>
-          <NavLink
-            to="/posts"
-            style={({ isActive }) => {
-              return isActive ? { color: "plum" } : {};
-            }}
-          >
-            Posts
-          </NavLink>
-          <NavLink
-            to="/todos"
-            style={({ isActive }) => {
-              return isActive ? { color: "plum" } : {};
-            }}
-          >
-            Todos
-          </NavLink>
-        </nav>
+        <Navbar />
         <Outlet />
         <Footer />
       </div>
