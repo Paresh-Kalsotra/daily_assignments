@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetchData from "./fetch";
+import CardMaker from "../components/CardMaker";
 
 export default function Users() {
   const [data, setData] = useState([]);
@@ -10,8 +11,12 @@ export default function Users() {
 
   return (
     <div>
-      <h2>User Data</h2>
-      {JSON.stringify(data)}
+      <h2>Users:</h2>
+      <ul>
+        {data.map((item) => (
+          <CardMaker key={item.id} item={item} />
+        ))}
+      </ul>
     </div>
   );
 }

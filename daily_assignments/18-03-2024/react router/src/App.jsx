@@ -4,8 +4,8 @@ import Home from "./pages/HomePage";
 import Users from "./pages/UsersPage";
 import Posts from "./pages/PostsPage";
 import Todos from "./pages/TodosPage";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 const route = [
   {
@@ -17,7 +17,7 @@ const route = [
         <Footer />
       </div>
     ),
-    errorElement: <h1>Page not found</h1>,
+    errorElement: <h1> 404 Page not found</h1>,
 
     children: [
       {

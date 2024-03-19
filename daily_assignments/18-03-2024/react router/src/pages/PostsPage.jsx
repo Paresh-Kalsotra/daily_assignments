@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetchData from "./fetch";
+import CardMaker from "../components/CardMaker";
 
 export default function Posts() {
   const [data, setData] = useState([]);
@@ -10,9 +11,12 @@ export default function Posts() {
 
   return (
     <div>
-      <h2>Posts Data</h2>
-
-      {JSON.stringify(data)}
+      <h2>Posts:</h2>
+      <ul>
+        {data.map((item) => (
+          <CardMaker key={item.id} item={item} />
+        ))}
+      </ul>
     </div>
   );
 }
