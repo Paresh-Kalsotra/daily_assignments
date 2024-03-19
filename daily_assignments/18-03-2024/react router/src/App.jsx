@@ -4,10 +4,10 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import Home from "./components/pages/home";
-import Users from "./components/pages/users";
-import Todos from "./components/pages/todos";
-import Posts from "./components/pages/posts";
+import Home from "./pages/HomePage";
+import Users from "./pages/UsersPage";
+import Posts from "./pages/PostsPage";
+import Todos from "./pages/TodosPage";
 import Footer from "./Footer";
 
 const route = [

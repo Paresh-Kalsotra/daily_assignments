@@ -1,7 +1,12 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import fetchData from "./fetch";
 
-const UsersPage = () => {
-  return <div>UsersPage</div>;
-};
+export default function Users() {
+  const [data, setData] = useState([]);
 
-export default UsersPage;
+  useEffect(() => {
+    fetchData(setData, "users");
+  }, []);
+
+  return <div>{JSON.stringify(data)}</div>;
+}

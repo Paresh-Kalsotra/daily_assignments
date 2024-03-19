@@ -1,7 +1,12 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import fetchData from "./fetch";
 
-const TodoPage = () => {
-  return <div>TodoPage</div>;
-};
+export default function Todos() {
+  const [data, setData] = useState([]);
 
-export default TodoPage;
+  useEffect(() => {
+    fetchData(setData, "todos");
+  }, []);
+
+  return <div>{JSON.stringify(data)}</div>;
+}
