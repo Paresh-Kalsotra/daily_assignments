@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import fetchData from "./fetch";
 
 export default function Users() {
@@ -8,5 +8,10 @@ export default function Users() {
     fetchData(setData, "users");
   }, []);
 
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <div>
+      <h2>User Data</h2>
+      {JSON.stringify(data)}
+    </div>
+  );
 }

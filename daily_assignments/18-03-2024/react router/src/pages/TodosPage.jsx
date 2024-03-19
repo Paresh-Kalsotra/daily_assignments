@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import fetchData from "./fetch";
 
 export default function Todos() {
@@ -8,5 +8,10 @@ export default function Todos() {
     fetchData(setData, "todos");
   }, []);
 
-  return <div>{JSON.stringify(data)}</div>;
+  return (
+    <div>
+      <h2>Todo Data</h2>
+      {JSON.stringify(data)}
+    </div>
+  );
 }

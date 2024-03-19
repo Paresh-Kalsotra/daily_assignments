@@ -1,3 +1,4 @@
+import React from "react";
 import {
   NavLink,
   Outlet,
@@ -16,16 +17,36 @@ const route = [
     element: (
       <div>
         <nav>
-          <NavLink to="/" activeClassName="active">
+          <NavLink
+            to="/"
+            style={({ isActive }) => {
+              return isActive ? { color: "cyan" } : {};
+            }}
+          >
             Home
           </NavLink>
-          <NavLink to="/users" activeClassName="active">
+          <NavLink
+            to="/users"
+            style={({ isActive }) => {
+              return isActive ? { color: "plum" } : {};
+            }}
+          >
             Users
           </NavLink>
-          <NavLink to="/posts" activeClassName="active">
+          <NavLink
+            to="/posts"
+            style={({ isActive }) => {
+              return isActive ? { color: "plum" } : {};
+            }}
+          >
             Posts
           </NavLink>
-          <NavLink to="/todos" activeClassName="active">
+          <NavLink
+            to="/todos"
+            style={({ isActive }) => {
+              return isActive ? { color: "plum" } : {};
+            }}
+          >
             Todos
           </NavLink>
         </nav>

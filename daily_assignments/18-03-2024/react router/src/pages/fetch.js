@@ -5,7 +5,7 @@ function fetchData(setData, route) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      setData(data);
+      setData(data.slice(0, 10));
     })
     .catch((err) => {
       console.log(err);

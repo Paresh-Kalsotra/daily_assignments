@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  return <div styles={{ colo }}>Website By Paresh Kalsotra</div>;
+  return <div styles={{}}>Website By Paresh Kalsotra</div>;
 };
 
 export default Footer;
