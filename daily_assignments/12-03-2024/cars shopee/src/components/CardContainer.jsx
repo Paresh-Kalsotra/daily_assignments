@@ -70,7 +70,7 @@ const CardContainer = () => {
         }}
       >
         {cars.map((car) => (
-          <Card car={car} />
+          <Card key={car.title} car={car} />
         ))}
       </div>
     </div>

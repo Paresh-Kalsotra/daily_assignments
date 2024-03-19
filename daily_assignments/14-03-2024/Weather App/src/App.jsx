@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import DisplayInfo from "./components/DisplayInfo";
 
@@ -14,7 +14,11 @@ function App() {
   //-------------handler for search-from submit
   const handleSearch = (event) => {
     event.preventDefault();
+    const fd = new FormData(event.target);
+    setCity(fd.get("cityInput"));
+  };
 
+  useEffect(() => {
     //fetching data from open Weather map
     if (city) {
       fetch(url + city)
@@ -38,10 +42,10 @@ function App() {
           }
         });
     } else {
-      setMessage("Enter city name for its weather forecast");
+      setMessage("Enter city for its weather forecast.");
       setWeatherInfo(null);
     }
-  };
+  }, [city]);
 
   return (
     <>
@@ -63,8 +67,6 @@ function App() {
             id="cityInput"
             name="cityInput"
             placeholder="Enter City"
-            onChange={(e) => setCity(e.target.value)}
-            style={{ padding: "5px", marginRight: "10px" }}
           ></input>
           <button type="submit" id="submit-btn">
             <FaSearch />
@@ -72,7 +74,7 @@ function App() {
         </form>
 
         {/* message */}
-        <p style={{ padding: "2%", fontSize: "larger", color: "#113946" }}>
+        <p style={{ padding: "2%", fontSize: "medium", color: "#113946" }}>
           {message}
         </p>
 
@@ -83,7 +85,7 @@ function App() {
           <img
             src="/default.png"
             alt="default img"
-            width="400"
+            width="300"
             style={{ opacity: "0.5" }}
           ></img>
         )}
