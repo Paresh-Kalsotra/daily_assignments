@@ -2,9 +2,12 @@ import React, { useReducer } from "react";
 import { NavLink } from "react-router-dom";
 
 const signupState = {
-  Name: "",
+  FirstName: "",
+  LastName: "",
   email: "",
+  contact: "",
   password: "",
+  ConfirmPassword: "",
 };
 
 const reducer = (state, action) => {
@@ -25,10 +28,17 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Storing data in local storage
-    localStorage.setItem("userData", JSON.stringify(state));
-    alert("signup successful");
-    console.log("Signup Data:", state);
+
+    //data check
+    if (state.password && state.password === state.ConfirmPassword) {
+      alert("signup successful");
+
+      // Storing data in local storage
+      localStorage.setItem("userData", JSON.stringify(state));
+      console.log("Signup Data:", state);
+    } else {
+      alert("Password miss match");
+    }
   };
 
   return (
@@ -37,10 +47,19 @@ function Signup() {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="Name"
-          value={state.Name}
+          name="First Name"
+          value={state.FirstName}
           onChange={handleChange}
-          placeholder="Enter Name"
+          placeholder="First Name"
+          required
+        />
+        <br />
+        <input
+          type="text"
+          name="Last Name"
+          value={state.LastName}
+          onChange={handleChange}
+          placeholder="Last Name"
           required
         />
         <br />
@@ -49,7 +68,16 @@ function Signup() {
           name="email"
           value={state.email}
           onChange={handleChange}
-          placeholder="Enter Email"
+          placeholder="Email"
+          required
+        />{" "}
+        <br />
+        <input
+          type="number"
+          name="contact"
+          value={state.contact}
+          onChange={handleChange}
+          placeholder="Contact"
           required
         />
         <br />
@@ -58,7 +86,16 @@ function Signup() {
           name="password"
           value={state.password}
           onChange={handleChange}
-          placeholder="Enter Password"
+          placeholder="Password"
+          required
+        />
+        <br />
+        <input
+          type="password"
+          name="confirmPassword"
+          value={state.ConfirmPassword}
+          onChange={handleChange}
+          placeholder="Confirm Password"
           required
         />
         <br />

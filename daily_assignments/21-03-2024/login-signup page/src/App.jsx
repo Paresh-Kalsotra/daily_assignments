@@ -9,7 +9,7 @@ const route = [
     element: (
       <div
         style={{
-          maxWidth: "300px",
+          width: "300px",
           margin: "auto",
           textAlign: "center",
         }}
