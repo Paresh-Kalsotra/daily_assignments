@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+body {
+  background-color: #eeeeee;
+}
+nav {
+  padding: 20px;
+  background-color: #222831;
+  margin-bottom: 30px;
+}
+nav a {
+  font-size: larger;
+  padding: 20px;
+  color: #eeeeee;
+  text-decoration: none;
+  cursor: pointer;
+}
+.active {
+  color: #00adb5;
+}
+.todo-container {
+  max-width: 500px;
+  border-radius: 10px;
+  margin: auto;
+
+  color: #eeeeee;
+}
+.form-container {
+  max-width: 500px;
+  background-color: #222831;
+  color: #eeeeee;
+  padding: 20px;
+  border-radius: 5px;
+  margin: auto;
+}
+.form-container * {
+  margin-bottom: 20px;
+}
+input {
+  width: 98%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 3px;
+  background-color: #393e46;
+  color: #eeeeee;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: #00adb5;
+  color: #eeeeee;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #048a91;
+}
+.card {
+  padding: 20px;
+  background-color: #222831;
+  border-bottom: 2px solid #00adb5;
+  color: #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.icon {
+  cursor: pointer;
+  color: #00adb5;
+  margin-inline: 10px;
+  font-size: x-large;
+}
+#message {
+  font-weight: bolder;
+  margin: 5px;
+  color: #00adb5;
+}
